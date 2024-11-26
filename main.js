@@ -9,7 +9,9 @@ window.addEventListener("load", () => {
 
   autoPlaySound.loop = true;
 
-  autoPlaySound.play();
+  document.body.addEventListener("click", () => {
+    autoPlaySound.play();
+  });
 
   localStorage.setItem("userInteracted", "true");
 

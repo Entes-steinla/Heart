@@ -218,3 +218,144 @@ body {
     height: 18px;
   }
 }
+/* * button play sound ------------------------------- */
+.container {
+  position: absolute;
+  z-index: 2;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  left: -56px;
+  bottom: -56px;
+}
+
+input {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+label {
+  display: -ms-grid;
+  display: grid;
+  border: none;
+  background-color: #f90b57;
+  -webkit-box-shadow: 0 0 20px #ff155fb7;
+  box-shadow: 0 0 20px #ff155fb7;
+  --w: 40px;
+  width: var(--w);
+  height: var(--w);
+  border-radius: 50%;
+  place-items: center;
+  cursor: pointer;
+}
+
+.play-icon {
+  --w: 50%;
+  width: var(--w);
+  height: var(--w);
+  background: white;
+  translate: 0 0;
+  -webkit-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+.play {
+  -webkit-clip-path: polygon(
+    20% 0,
+    20% 100%,
+    90% 50%,
+    90% 50%,
+    90% 50%,
+    90% 50%,
+    90% 50%,
+    90% 50%,
+    90% 50%
+  );
+  clip-path: polygon(
+    20% 0,
+    20% 100%,
+    90% 50%,
+    90% 50%,
+    90% 50%,
+    90% 50%,
+    90% 50%,
+    90% 50%,
+    90% 50%
+  );
+  translate: 6% 0;
+}
+
+.container:has(input:checked) .play-icon,
+.pause {
+  -webkit-clip-path: polygon(
+    0 0,
+    0 100%,
+    33.33% 100%,
+    33.33% 0,
+    66.66% 0,
+    100% 0,
+    100% 100%,
+    66.66% 100%,
+    66.66% 0
+  );
+  clip-path: polygon(
+    0 0,
+    0 100%,
+    33.33% 100%,
+    33.33% 0,
+    66.66% 0,
+    100% 0,
+    100% 100%,
+    66.66% 100%,
+    66.66% 0
+  );
+  translate: 0 0;
+}
+
+.play-2 {
+  -webkit-clip-path: polygon(
+    20% 0,
+    20% 100%,
+    35% 90%,
+    35% 90%,
+    35% 90%,
+    90% 50%,
+    35% 10%,
+    35% 10%,
+    35% 10%
+  );
+  clip-path: polygon(
+    20% 0,
+    20% 100%,
+    35% 90%,
+    35% 90%,
+    35% 90%,
+    90% 50%,
+    35% 10%,
+    35% 10%,
+    35% 10%
+  );
+  translate: 6% 0;
+}
+.example {
+  display: -ms-grid;
+  display: grid;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(white),
+    to(black)
+  );
+  background: -o-linear-gradient(top, white, black);
+  background: linear-gradient(to bottom, white, black);
+}

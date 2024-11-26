@@ -1,21 +1,14 @@
-// window.addEventListener("load", () => {
-//   const autoPlaySound = new Audio("./background_sound/Pasilyo.mp3");
-//   autoPlaySound.loop = true;
-//   autoPlaySound.play();
-// });
-
 window.addEventListener("load", () => {
   const autoPlaySound = new Audio("./background_sound/Pasilyo.mp3");
-
   autoPlaySound.loop = true;
 
-  document.body.addEventListener("click", () => {
-    autoPlaySound.play();
+  const checkbox = document.getElementById("checkbox");
+
+  checkbox.addEventListener("change", () => {
+    if (checkbox.checked) {
+      autoPlaySound.play();
+    } else {
+      autoPlaySound.pause();
+    }
   });
-
-  localStorage.setItem("userInteracted", "true");
-
-  if (localStorage.getItem("userInteracted")) {
-    autoPlaySound.play();
-  }
 });
